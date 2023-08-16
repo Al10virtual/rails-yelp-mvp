@@ -1,0 +1,12 @@
+<div class=container>
+  <h1>New review</h1>
+  <%= simple_form_for [@restaurant, @review] do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating, collection: 0..5, include_blank: false %>
+      <%= f.button :submit, class: "btn btn-success mr-2" %>
+  <% end %>
+  <br>
+  <div>
+    <%= link_to "Back to restaurant", restaurant_path(@restaurant), class: "btn btn-secondary mr-2" %>
+  </div>
+</div>
